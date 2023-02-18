@@ -3,6 +3,12 @@ import Head from 'next/head'
 import Image from 'next/image'
 
 export default function Contacto() {
+
+    function enviarDatos(){
+        alert("enviar datos al correo")
+    }
+
+
     return (
         <>
             <Head>
@@ -18,16 +24,18 @@ export default function Contacto() {
                             <h2 className=' text-6xl text-center mb-6 text-white'>Contacto</h2>
                             <form className=' grid grid-cols-1 ms:grid-cols-2 md:grid-cols-2 gap-6 mx-6 ' id='formularioContacto' name='formularioContacto'>
                                 <div className='from-groud'>
-                                    <input className=' w-full h-14 px-6 bg-stone-800 focus:bg-stone-700 text-stone-400  rounded-sm' type='text' id='nombre' name='nombre' placeholder='Nombre' />
+                                    <input className=' w-full h-14 px-6 bg-stone-800 focus:bg-stone-700 text-stone-400  rounded-sm' type='text' id='nombre' name='nombre' placeholder='Nombre' autoComplete='off' />
                                 </div>
                                 <div className='from-groud'>
-                                    <input className='  w-full h-14 px-6 bg-stone-800 focus:bg-stone-700 text-stone-400 rounded-sm' type='email' id='email' name='email' placeholder='Correo' />
+                                    <input className='  w-full h-14 px-6 bg-stone-800 focus:bg-stone-700 text-stone-400 rounded-sm' type='email' id='email' name='email' placeholder='Correo' autoComplete='off'/>
                                 </div>
-                                <div className='from-groud col-span-1 md:col-span-2'>
-                                    <textarea className='  w-full h-60 p-6 bg-stone-800 focus:bg-stone-700 text-stone-400 rounded-sm resize-none' id='mensaje' name='mensaje' placeholder='Mensaje'></textarea>
+                                <div className='from-groud col-span-1 md:col-span-2 pb-3'>
+                                    <textarea className='  w-full h-60 p-6 bg-stone-800 focus:bg-stone-700 text-stone-400 rounded-sm resize-none' id='mensaje' name='mensaje' placeholder='Mensaje' autoComplete='off'></textarea>
                                 </div>
                             </form>
-                            <button className=''>hola</button>
+                            <div className=' flex justify-end mx-6'>
+                                <button className='w-40 h-10 bg-red-700 hover:bg-red-800 text-white rounded-sm' onClick={enviarDatos}>Enviar Correo</button>
+                            </div>
                         </div>
                         <div className=' h-screen'>
                             <Image className=' h-full w-full' src="/images/imagen-contacto.webp" alt='wallpaper contacto' width={500} height={500} />
